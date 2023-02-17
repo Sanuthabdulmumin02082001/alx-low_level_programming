@@ -1,27 +1,39 @@
-#include <stdio.h>
-    
-#include "main.h"
+#include <stdlib.h>
 
+#include <time.h>
+
+#include <stdio.h>
 /** 
- 
- * main - prints the name of the program 
- 
- * @argc: number of arguments 
- 
- * @argv: array of arguments 
- 
- * 
- 
+
+ * main - assigns a random number to int n everytime 
+
+ * it executes, and prints it 
+
  * Return: Always 0 (Success) 
- 
+
  */
 
-int main(int argc __attribute__((unused)), char *argv[])
-
+int main(void)
 {
 
- printf("%s\n", *argv);
+int n;
 
- return (0);
+srand(time(0));
+
+n = rand() - RAND_MAX / 2;
+
+if (n > 0)
+
+  printf("%d is positive\n", n);
+
+else if (n == 0)
+
+  printf("%d is zero\n", n);
+
+else if (n < 0)
+
+  printf("%d is negative\n", n);
+
+return (0);
 
 }
